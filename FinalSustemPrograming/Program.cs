@@ -21,7 +21,7 @@ class Program
             Console.Clear();
             Console.WriteLine("1. Search for \"try\" in files (folder: D:\\SteamLibrary\\steamapps\\common\\Hearts of Iron IV)");
             Console.WriteLine("2. Copy files with \"try\" replaced by \"<replaced>\" (copy to D:\\ForFinal)");
-            Console.WriteLine("3. Search for classes and interfaces in .cs files (not available yet)");
+            Console.WriteLine("3. (not available yet)");
             Console.WriteLine("0. Exit");
             Console.Write("\nYour choice: ");
 
@@ -35,8 +35,8 @@ class Program
                     new Thread(CopyFilesWithReplace).Start();
                     break;
                 case "3":
-                    Console.WriteLine("Unfortunately, not available yet");
-                    Thread.Sleep(2000);
+                    Console.WriteLine("Now punsh for you!");
+                    Thread.Sleep(20000);
                     break;
                 case "0":
                     Console.WriteLine("Goodbye!");
@@ -131,8 +131,7 @@ class Program
         Directory.CreateDirectory(targetFolder);
         string[] files = Directory.GetFiles(sourceFolder, "*.*", SearchOption.AllDirectories);
         totalCopyFiles = files.Length;
-        processedCopyFiles = 0;
-        totalReplaced = 0;
+        processedCopyFiles, totalReplaced = 0;
         copyResults.Clear();
 
         object lockObj = new object();
